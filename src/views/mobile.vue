@@ -6,6 +6,14 @@
     .version
       span 版本：{{ version.name }}&nbsp;&nbsp;&nbsp;&nbsp;
       span 大小：{{ version.size }}
+    .helpArticle 
+      el-row(:gutter="0" type="flex")
+        el-col(:xs="3")
+        el-col.helpArticle-div(:xs="9")
+          el-button.helpArticle-button(type="text" @click="gotoHelp('atcHelp')") ATC交易帮助文档
+        el-col.helpArticle-div(:xs="9")
+          el-button.helpArticle-button(type="text" @click="gotoHelp('coinHelp')") 币币交易帮助文档
+        el-col(:xs="3")
     .downImg
       img(v-lazy="version.imgUrl" @click="downloadApp(version.downloadUrl)")
 </template>
@@ -25,6 +33,7 @@ export default class Mobile extends Vue {
 
   //版本信息
   version: any = {
+    type: 'android',
     name: '安卓版',
     size: '6.3M',
     downloadUrl: 'http://down.aabcoin.com/app/aabotc.apk',
@@ -32,9 +41,28 @@ export default class Mobile extends Vue {
   }
 
   /**
+   * 查看帮助文档
+   * @params url 文档地址
+   */
+  gotoHelp(url: string):void {
+    this.$router.push({
+      path: `/help/${url}`
+    })
+  }
+
+  /**
    * 下载app 
    * @params url 下载地址*/
   downloadApp(url: string): void {
+    //ios版本暂未开放下载
+    if (this.version.type === 'ios') {
+      this.$message({
+        message: 'ios版本暂未开放下载',
+        type: 'error',
+        duration: 1000
+      });
+      return;
+    }
     window.location.href = url;
   }
 
@@ -42,11 +70,13 @@ export default class Mobile extends Vue {
 
   created() {
     if ( browser.versions.android ) {
+      this.version.type = 'android';
       this.version.name = '安卓版';
       this.version.size = '6.3M';
       this.version.downloadUrl = 'http://down.aabcoin.com/app/aabotc.apk';
       this.version.imgUrl = '../../static/img/androidImg.png';
     } else if ( browser.versions.ios) {
+      this.version.type = 'ios';
       this.version.name = 'ios版';
       this.version.size = '6.3M';
       this.version.downloadUrl = 'http://down.aabcoin.com/app/aabotc.apk';
@@ -86,8 +116,19 @@ export default class Mobile extends Vue {
       font-size: 1rem;
     }
 
+    .helpArticle{
+      margin-top: 10px;
+
+      .helpArticle-div{
+        text-align: center;
+      }
+      .helpArticle-button{
+        text-align: center;
+      }
+    }
+
     .downImg{
-      margin-top: 60px;
+      margin-top: 20px;
       text-align: center;
 
       img{

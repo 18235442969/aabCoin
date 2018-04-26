@@ -35,7 +35,8 @@ export default class Footer extends Vue {
     color: #7A7A7A;
   }
   .time{
-    text-align: center;
+    margin-left: 30px;
+    text-align: left;
     line-height: 60px;
     font-size: 1rem;
   }

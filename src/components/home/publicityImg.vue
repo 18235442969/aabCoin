@@ -44,14 +44,18 @@ export default class PublicityImg extends Vue {
    *atc交易帮助
    */
   gotoAtcHelp(): void{
-    console.log(1)
+    this.$router.push({
+      path: '/help/atcHelp'
+    })
   }
   
   /**
    *币币交易帮助
    */
   gotoCoinHelp(): void {
-    console.log(2);
+    this.$router.push({
+      path: '/help/coinHelp'
+    })
   }
 
   mounted() {}
