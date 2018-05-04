@@ -2,8 +2,7 @@
   div.header
     el-menu(class="el-menu-demo" mode="horizontal" background-color="#252a33" text-color="#fff" active-text-color="#ffd04b" :router="true")
       el-row(:gutter="0" type="flex")
-        el-col(:xs="1" :sm="1")
-        el-col(:xs="5" :sm="2")
+        el-col(:xs="6" :sm="2" style="text-align: center;")
           img(v-lazy="logoSrc").logo-img
         el-col(:xs="6" :sm="2").home
           el-menu-item(index="/") 首页
@@ -11,7 +10,7 @@
           el-menu-item(index="/") ATC交易
         el-col(:xs="6" :sm="2").coin
           el-menu-item(index="/") 币币交易
-        el-col(:xs="0" :sm="11")
+        el-col(:xs="0" :sm="12")
         el-col(:xs="0" :sm="2").login
           el-menu-item(index="/") 登录
         el-col(:xs="0" :sm="2").registe
