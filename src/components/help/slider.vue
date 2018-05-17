@@ -16,9 +16,10 @@ import Component from "vue-class-component";
 })
 export default class Slider extends Vue {
 
+  //当前显示文章选择
   sliderActiveClass: any = {
-    atcHelpActive: false,
-    coinHelpActive: false
+    atcHelpActive: false,//atc帮助文档显示
+    coinHelpActive: false//货币帮助文档显示
   }
 
   /**
@@ -32,6 +33,7 @@ export default class Slider extends Vue {
   }
 
 mounted() {
+    //根据路由判断当前显示文章，控制侧边栏目显示
     switch (this.$route.path) {
       case '/help/atcHelp':
           this.sliderActiveClass.atcHelpActive = true

@@ -69,6 +69,7 @@ export default class Mobile extends Vue {
   mounted() {}
 
   created() {
+    //判断当前浏览器类型（安卓 or ios）
     if ( browser.versions.android ) {
       this.version.type = 'android';
       this.version.name = '安卓版';

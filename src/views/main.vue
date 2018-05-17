@@ -24,12 +24,12 @@ const appNamespaceGetter = namespace("app", Getter);
 
 @Component({
   components: {
-    'v-header': header,
-    publicityImg,
-    announcement,
-    introduce,
-    download,
-    'v-footer': footer
+    'v-header': header,//头部
+    publicityImg,//轮转图片
+    announcement,//公告通知
+    introduce,//首页介绍
+    download,//下载
+    'v-footer': footer//底部
   }
 })
 export default class App extends Vue {

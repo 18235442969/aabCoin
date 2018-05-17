@@ -24,9 +24,10 @@ import Component from "vue-class-component";
 })
 export default class Download extends Vue {
 
+  //app下载图片地址
   appDownloadUrl: object = {
-    androidUrl: '../../../static/img/qrcode.png',
-    iosUrl: '../../../static/img/qrcode.png',
+    androidUrl: '../../../static/img/qrcode.png',//安卓二维码地址
+    iosUrl: '../../../static/img/qrcode.png',//ios二维码地址
   }
 
   mounted() {}

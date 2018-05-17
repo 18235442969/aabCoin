@@ -34,10 +34,11 @@ import Component from "vue-class-component";
 })
 export default class Introduce extends Vue {
 
+  //首页介绍图片地址
   introdeceImg: object = {
-    tradeImg: '../../../static/img/trade.png',
-    securityImg: '../../../static/img/security.png',
-    lookImg: '../../../static/img/look.png'
+    tradeImg: '../../../static/img/trade.png',//交易图片
+    securityImg: '../../../static/img/security.png',//安全图片
+    lookImg: '../../../static/img/look.png'//观察掌控图片
   }
 
   mounted() {}

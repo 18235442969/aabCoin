@@ -22,18 +22,22 @@ import "swiper/dist/css/swiper.css";
 })
 export default class PublicityImg extends Vue {
 
+  //atc图片地址
   atcImgUrl: string = '../../../static/img/atc.jpg'
+  //货币图片地址
   coinImgUrl: string = '../../../static/img/coin.jpg'
 
   /**
-   *swiper参数 
+   *swiper滚动图片参数 
    */
   private swiperOption: Object = {
+    //自动轮转
     autoplay: {
-      delay: 30000,
+      delay: 3000,//时间
       stopOnLastSlide: false,
       disableOnInteraction: false
     },
+    //分页器
     pagination: {
       el: ".swiper-pagination",
       clickable: true
@@ -41,7 +45,7 @@ export default class PublicityImg extends Vue {
   }
 
   /**
-   *atc交易帮助
+   *atc交易帮助文档
    */
   gotoAtcHelp(): void{
     this.$router.push({
@@ -50,7 +54,7 @@ export default class PublicityImg extends Vue {
   }
   
   /**
-   *币币交易帮助
+   *币币交易帮助文档
    */
   gotoCoinHelp(): void {
     this.$router.push({
