@@ -1,5 +1,5 @@
 <template lang="pug">
-  .mobile
+  .mobile(v-if="!isWeichat")
     .logo
       img(v-lazy="logoImg")
       .logo-text 素币交易所
@@ -16,6 +16,9 @@
         el-col(:xs="3")
     .downImg
       img(v-lazy="version.imgUrl" @click="downloadApp(version.downloadUrl)")
+  .mobile(v-else)
+    .wechatBg
+      img(src="../../static/img/wechatBg.png")
 </template>
 
 <script lang="ts">
@@ -30,6 +33,9 @@ import { browser } from '../assets/js/userAgent'
 export default class Mobile extends Vue {
   //logo
   logoImg: string = '../../static/img/mobileLogo.png'
+
+  //是否是微信浏览器打开
+  isWeichat: boolean = false;
 
   //版本信息
   version: any = {
@@ -66,7 +72,10 @@ export default class Mobile extends Vue {
     window.location.href = url;
   }
 
-  mounted() {}
+  mounted() {
+    let ua = navigator.userAgent.toLowerCase();
+    this.isWeichat = ua.indexOf('micromessenger') != -1;
+  }
 
   created() {
     //判断当前浏览器类型（安卓 or ios）
@@ -135,6 +144,21 @@ export default class Mobile extends Vue {
       img{
         width: 85%;
         height: 50px;
+      }
+    }
+
+    .wechatBg{
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999;
+
+      img{
+        position: absolute;
+        top: 10%;
+        width: 100%;
+        height: 50%; 
       }
     }
   }
