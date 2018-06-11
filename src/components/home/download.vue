@@ -2,7 +2,7 @@
   .download
     el-row(:gutter="0" type="flex")
       el-col(:xs="0" :sm="8")
-        .download-title AAB交易平台APP
+        .download-title 素币交易所APP
         .download-content 更专业 更简单 更安全
       el-col(:xs="12" :sm="3")
         .qrcode

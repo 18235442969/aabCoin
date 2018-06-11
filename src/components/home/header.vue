@@ -7,7 +7,7 @@
         el-col(:xs="6" :sm="2").home
           el-menu-item(index="/") 首页
         el-col(:xs="6" :sm="2").atc
-          el-menu-item(index="/") ATC交易
+          el-menu-item(index="/") CNT交易
         el-col(:xs="6" :sm="2").coin
           el-menu-item(index="/") 币币交易
         el-col(:xs="0" :sm="12")

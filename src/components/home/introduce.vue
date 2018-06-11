@@ -7,7 +7,7 @@
             .introduce-img
               img(v-lazy="introdeceImg.tradeImg")
             .introduce-box-title 快速买卖
-            .introduce-box-content AAB交易平台是一个全自动化的交易平台，方便快捷
+            .introduce-box-content 素币交易所是一个全自动化的交易平台，方便快捷
       el-col(:xs="8" :sm="8")
         .introduce-box
           div
