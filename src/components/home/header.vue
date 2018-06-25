@@ -53,7 +53,8 @@ export default class Header extends Vue {
     border-bottom: 0;
   }
   .logo-img{
-    width: 56px;
-    height: 99%;
+    width: 50px;
+    height: 50px;
+    margin-top: 5.4px;
   }
 </style>

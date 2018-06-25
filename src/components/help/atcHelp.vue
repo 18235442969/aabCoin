@@ -10,7 +10,7 @@
           .article-title 人民币买币 新手指南
           .article-content 
             p 在法币交易区，购买数字货币，so easy！（下文多图，若图片未打开，请刷新。） 
-            p Step 1，输入网址 otc.huobipro.com； 有账号，点击“登录”, 再参考Step 3。 没有账号，点击“注册”；
+            p Step 1，输入网址 www.fctccoin.com； 有账号，点击“登录”, 再参考Step 3。 没有账号，点击“注册”；
             img.article-image(v-lazy="atcHelpImg.one")
             p Step 2，在注册页面，选择“国籍”，输入“手机号”，点击“获取验证码”（以手机注册为例）。
             p 然后输入收到的验证码，设置登录密码，再点“注册”。

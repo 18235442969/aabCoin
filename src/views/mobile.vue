@@ -6,14 +6,14 @@
     .version
       span 版本：{{ version.name }}&nbsp;&nbsp;&nbsp;&nbsp;
       span 大小：{{ version.size }}
-    .helpArticle 
-      el-row(:gutter="0" type="flex")
-        el-col(:xs="3")
-        el-col.helpArticle-div(:xs="9")
-          el-button.helpArticle-button(type="text" @click="gotoHelp('atcHelp')") CNT交易帮助文档
-        el-col.helpArticle-div(:xs="9")
-          el-button.helpArticle-button(type="text" @click="gotoHelp('coinHelp')") 币币交易帮助文档
-        el-col(:xs="3")
+    // .helpArticle 
+    //   el-row(:gutter="0" type="flex")
+    //     el-col(:xs="3")
+    //     el-col.helpArticle-div(:xs="9")
+    //       el-button.helpArticle-button(type="text" @click="gotoHelp('atcHelp')") CNT交易帮助文档
+    //     el-col.helpArticle-div(:xs="9")
+    //       el-button.helpArticle-button(type="text" @click="gotoHelp('coinHelp')") 币币交易帮助文档
+    //     el-col(:xs="3")
     .downImg
       img(v-lazy="version.imgUrl" @click="downloadApp(version.downloadUrl)")
   .mobile(v-else)
@@ -41,7 +41,7 @@ export default class Mobile extends Vue {
   version: any = {
     type: 'android',
     name: '安卓版',
-    size: '6.3M',
+    size: '9.3M',
     downloadUrl: 'http://down.fctccoin.com/app/aabotc.apk',
     imgUrl: '../../static/img/androidImg.png'
   }
@@ -82,14 +82,14 @@ export default class Mobile extends Vue {
     if ( browser.versions.android ) {
       this.version.type = 'android';
       this.version.name = '安卓版';
-      this.version.size = '6.3M';
+      this.version.size = '9.3M';
       this.version.downloadUrl = 'http://down.fctccoin.com/app/aabotc.apk';
       this.version.imgUrl = '../../static/img/androidImg.png';
     } else if ( browser.versions.ios) {
       this.version.type = 'ios';
       this.version.name = 'ios版';
       this.version.size = '6.3M';
-      this.version.downloadUrl = 'http://down.fctccoin.com/app/aabotc.apk';
+      this.version.downloadUrl = 'http://down.fctccoin.com/app/aabotc.ipa';
       this.version.imgUrl = '../../static/img/iosImg.png';
     }
   }

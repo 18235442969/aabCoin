@@ -3,7 +3,7 @@
     .announcement-content
       span.title 热烈庆祝素币交易所正式上线公告
       span.line &nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;
-      span.title 4月25日到4月30日平台交易免除手续费公告
+      span.title 素币交易所交易手续费公告
       span.line &nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;
       span.title 关于新用户优惠公告
       span.line &nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;
