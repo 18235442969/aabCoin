@@ -4,16 +4,8 @@
       img(v-lazy="logoImg")
       .logo-text 素币交易所
     .version
-      span 版本：{{ version.name }}&nbsp;&nbsp;&nbsp;&nbsp;
+      span 版本：{{ version.name }}（测试）&nbsp;&nbsp;&nbsp;&nbsp;
       span 大小：{{ version.size }}
-    // .helpArticle 
-    //   el-row(:gutter="0" type="flex")
-    //     el-col(:xs="3")
-    //     el-col.helpArticle-div(:xs="9")
-    //       el-button.helpArticle-button(type="text" @click="gotoHelp('atcHelp')") CNT交易帮助文档
-    //     el-col.helpArticle-div(:xs="9")
-    //       el-button.helpArticle-button(type="text" @click="gotoHelp('coinHelp')") 币币交易帮助文档
-    //     el-col(:xs="3")
     .downImg
       img(v-lazy="version.imgUrl" @click="downloadApp(version.downloadUrl)")
   .mobile(v-else)
@@ -42,7 +34,7 @@ export default class Mobile extends Vue {
     type: 'android',
     name: '安卓版',
     size: '9.3M',
-    downloadUrl: 'http://down.fctccoin.com/app/aabotc.apk',
+    downloadUrl: 'http://down.fctccoin.com/app/aabotcTest.apk',
     imgUrl: '../../static/img/androidImg.png'
   }
 
@@ -61,15 +53,14 @@ export default class Mobile extends Vue {
    * @params url 下载地址*/
   downloadApp(url: string): void {
     //ios版本暂未开放下载
-    // if (this.version.type === 'ios') {
-    //   this.$message({
-    //     message: 'ios版本暂未开放下载',
-    //     type: 'error',
-    //     duration: 1000
-    //   });
-    //   return;
-    // }
-    // alert(url)
+    if (this.version.type === 'ios') {
+      this.$message({
+        message: 'ios版本暂未开放下载',
+        type: 'error',
+        duration: 1000
+      });
+      return;
+    }
     window.location.href = url;
   }
 
@@ -84,7 +75,7 @@ export default class Mobile extends Vue {
       this.version.type = 'android';
       this.version.name = '安卓版';
       this.version.size = '9.44M';
-      this.version.downloadUrl = 'http://down.fctccoin.com/app/aabotc.apk';
+      this.version.downloadUrl = 'http://down.fctccoin.com/app/aabotcTest.apk';
       this.version.imgUrl = '../../static/img/androidImg.png';
     } else if ( browser.versions.ios) {
       this.version.type = 'ios';

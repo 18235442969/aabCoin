@@ -5,6 +5,7 @@ import { browser } from '../assets/js/userAgent'
 const demo: AsyncComponent = (): any => import('@/views/demo.vue')
 const main: AsyncComponent = (): any => import('@/views/main.vue')
 const mobile: AsyncComponent = (): any => import('@/views/mobile.vue')
+const mobileTest: AsyncComponent = (): any => import('@/views/mobileTest.vue')
 const helpLayout: AsyncComponent = (): any => import('@/views/layout/helpLayout.vue')
 const atcHelp: AsyncComponent = (): any => import('@/components/help/atcHelp.vue')
 const coinHelp: AsyncComponent = (): any => import('@/components/help/coinHelp.vue')
@@ -22,6 +23,10 @@ const routes: RouteConfig[] = [
     path: '/mobile',
     name: 'mobile',
     component: mobile
+  }, {
+    path: '/mobile/customer/test',
+    name: 'mobileTest',
+    component: mobileTest
   },{
     path: '/help',
     name: 'help',
@@ -51,7 +56,7 @@ const router: Router = new Router({
 
 router.beforeEach((to, from, next) => {
   //判断是否是手机端
-  if (browser.versions.mobile && to.path != '/mobile' && to.path.indexOf('help') === -1 ) {
+  if (browser.versions.mobile && to.path != '/mobile' && to.path.indexOf('help') === -1 && to.path != '/mobile/customer/test' ) {
     next({ path: '/mobile' });
   } else {
     //浏览器重定向
